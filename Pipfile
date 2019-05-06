@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 flask = "*"
 line-bot-sdk = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.6"
