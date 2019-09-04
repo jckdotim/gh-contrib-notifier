@@ -19,6 +19,14 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.github_id
 
+    @classmethod
+    def new(cls, github_id, line_uid, db=None):
+        user = User(github_id=github_id, line_uid=line_uid)
+        if db:
+            db.session.add(user)
+            db.session.commit()
+        return user
+
 
 @app.route('/')
 def index():
