@@ -21,7 +21,7 @@ class User(db.Model):
 
     @classmethod
     def new(cls, github_id, line_uid, db=None):
-        user = User(github_id=github_id, line_uid=line_uid)
+        user = cls(github_id=github_id, line_uid=line_uid)
         if db:
             db.session.add(user)
             db.session.commit()
